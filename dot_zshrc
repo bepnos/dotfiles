@@ -35,3 +35,5 @@ export NVM_DIR="$HOME/.nvm"
 source /etc/zsh_command_not_found
 eval $(thefuck --alias)
 
+
+export PATH=$PATH:/home/bepnos/.spicetify
