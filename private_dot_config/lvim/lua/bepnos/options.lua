@@ -56,10 +56,6 @@ table.insert(lvim.plugins, {
     end, 100)
   end,
 })
-
-require("presence").setup({
-  log_level = "debug",
-})
 -- lab.nvim config
 require("lab").setup{
   code_runner = {
