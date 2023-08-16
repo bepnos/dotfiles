@@ -6,6 +6,9 @@ lvim.transparent_window = true
 lvim.builtin.nvimtree.setup.sync_root_with_cwd = false
 lvim.builtin.terminal.open_mapping = "<c-t>"
 vim.opt.number = true
+lvim.keys.normal_mode["<leader>v"] = ":vsplit<CR>"
+lvim.builtin.which_key.mappings["h"] = {}
+lvim.keys.normal_mode["<leader>h"] = ":split<CR>"
 -- List of plugins to load
 lvim.plugins = {
   {
@@ -41,7 +44,13 @@ lvim.plugins = {
 {"andweeb/presence.nvim"},
 { "nvim-neotest/neotest"},
 {"nvim-neotest/neotest-python"},
-{"mfussenegger/nvim-dap-python"},
+{
+    "mfussenegger/nvim-dap-python",
+    ft = "python",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+    },
+  },
 {"stevearc/dressing.nvim"},
   {"AckslD/swenv.nvim"},
 }
@@ -56,6 +65,7 @@ table.insert(lvim.plugins, {
     end, 100)
   end,
 })
+
 -- lab.nvim config
 require("lab").setup{
   code_runner = {
@@ -73,20 +83,34 @@ lvim.builtin.which_key.mappings["r"] = {
 
 -- greeter custom logo
 lvim.builtin.alpha.dashboard.section.header.val = {
-    "                                    ██████                                    ",
-    "                                ████▒▒▒▒▒▒████                                ",
-    "                              ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒██                              ",
-    "                            ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██                            ",
-    "                          ██▒▒▒▒▒▒▒▒    ▒▒▒▒▒▒▒▒                              ",
-    "                          ██▒▒▒▒▒▒  ▒▒▓▓▒▒▒▒▒▒  ▓▓▓▓                          ",
-    "                          ██▒▒▒▒▒▒  ▒▒▓▓▒▒▒▒▒▒  ▒▒▓▓                          ",
-    "                        ██▒▒▒▒▒▒▒▒▒▒    ▒▒▒▒▒▒▒▒    ██                        ",
-    "                        ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██                        ",
-    "                        ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██                        ",
-    "                        ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██                        ",
-    "                        ██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒██                        ",
-    "                        ██▒▒██▒▒▒▒▒▒██▒▒▒▒▒▒▒▒██▒▒▒▒██                        ",
-    "                        ████  ██▒▒██  ██▒▒▒▒██  ██▒▒██                        ",
-    "                        ██      ██      ████      ████                        ",
+"                                                                                ",
+"                                                                                ",
+"                                                                                ",
+"                   &                                           (##              ",
+"               %%   &                                      && %/&&%%            ",
+"              %%&  #%( %&&                              &(& &/(& &(&            ",
+"              % ,##/#///# %                           (&#(,% (#*%/(%            ",
+"                %*##&.#*#(/&(                       &%&(#,%% ,/*###             ",
+"              #%#,/(,&&&&(#/(##%                  &/*/ ,(,& %/(/#&*             ",
+"                #/#%#(%(//**(*/%%                %#(.%(#%& (((%/#&%             ",
+"                %**/%/&# /#/.%%#*/ &&%       /&(/#,(*(## &(#,(**#*              ",
+"                 /*#,, ,   %/ ,/(*,*  &   &##(((*%*/(#%   #(,,%%%&              ",
+"                #%(.///%      (*//(/(%    ##/##**/((#   &//(//#/,               ",
+"                 &&(#,/(*      %#.##/#% &,&*%/%*(%#     ##(&#/(/                ",
+"                  %(.(**(#      %&# ***(*%#*/%#(#(     %*/*,%#&&                ",
+"                  &((*(**%*     &#&./*(#(//#(((##   %  ((**(#                   ",
+"                    #,///,,#    #(./(/##/*(#(*/ (& %% %(*,/*#,                  ",
+"                   % %//(*(# #  &%#((&,%(,*/ (#&& &&&%&#,(*/#                   ",
+"                      %*/(%(##%&,&*#(%*//**/#%(  %/(#/**#(*&                    ",
+"                       %&(/ // % &#*#(/(/,*(/#%(% /(%,#*&&(                     ",
+"                       #%(##/ &##**#((%,**(%(%/#&%//##&(%*                      ",
+"                       %% &#&&*(%#* ,#%(#,/#%# # /##  #&                        ",
+"                           %&##%/%((%%(&#%&/& (( %   &%%                        ",
+"                           &&& %%&#  %   %#& %&   / #                           ",
+"                             (   &      %*  * %  &                              ",
+"                             % #      (/# & %%&&/#                              ",
+"                                  &% /        &                                 ",
+"                                   (                                            ",
+"                                                                                ",
 }
 lvim.builtin.alpha.dashboard.section.header.opts.hl = "HighlightGroupName"

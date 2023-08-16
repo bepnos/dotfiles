@@ -18,7 +18,7 @@ local pyright_opts = {
         autoImportCompletions = true,
         autoSearchPaths = true,
         diagnosticMode = "workspace", -- openFilesOnly, workspace
-        typeCheckingMode = "basic", -- off, basic, strict
+        typeCheckingMode = "off", -- off, basic, strict
         useLibraryCodeForTypes = true,
       },
     },
@@ -33,7 +33,10 @@ formatters.setup { { name = "black" } }
 -- lvim.format_on_save.pattern = { "*.py" }
 
 local linters = require "lvim.lsp.null-ls.linters"
-linters.setup { { command = "flake8", args = { "--ignore=E203,E501" }, filetypes = { "python" } } }
+linters.setup {
+  { name = "ruff", filetypes = { "python" } },
+  { name = "mypy", filetypes = { "python" } },
+}
 
 local opts = {
   mode = "n", -- NORMAL mode
