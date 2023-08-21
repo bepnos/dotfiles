@@ -1,5 +1,6 @@
 -- Settings configuration
 vim.api.nvim_set_option("clipboard","unnamedplus")
+vim.cmd("set clipboard=unnamedplus")
 vim.opt.relativenumber = true
 lvim.colorscheme = "gruvbox"
 lvim.transparent_window = true
