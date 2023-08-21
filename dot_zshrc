@@ -36,3 +36,4 @@ eval $(thefuck --alias)
 
 
 export PATH=$PATH:/home/bepnos/.spicetify
+fpath+=${ZDOTDIR:-~}/.zsh_functions

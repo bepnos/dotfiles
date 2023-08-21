@@ -1,0 +1,6 @@
+[font]
+normal = { family = "MesloLGS NF", style="Regular"}
+
+[window]
+opacity = 0.7
+title = "i3 is overrated"
