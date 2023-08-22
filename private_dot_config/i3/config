@@ -223,13 +223,13 @@ bar {
       	}
 }
 # make sure to run monitor setup before others 
-exec --no-startup-id xrandr --output DP-4 --mode 1920x1080 --rate 144
-exec --no-startup-id sleep 5 && xmodmap ~/.Xmodmap
+# Make sure shell script to symlink machine specific config to the path specified below exists
+include ~/.config/i3/machine-config
+exec --no-startup-id sleep 5 && xmodmap ~/.Xmodmap 
 exec --no-startup-id picom & 
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xinput set-prop 11 "libinput Accel Profile Enabled" 0 1
 
-bindsym $mod+shift+x exec i3lock
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -237,8 +237,6 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 exec spotify 
-workspace $ws3 output HDMI-0
-workspace $ws2 output HDMI-0
 exec google-chrome
 
 # Fullscreen screenshot
