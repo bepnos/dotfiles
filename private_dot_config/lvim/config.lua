@@ -3,6 +3,4 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 reload("bepnos.options")
-reload("bepnos.pythondev")
-reload("bepnos.pythondev")
 -- test

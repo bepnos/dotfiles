@@ -54,6 +54,14 @@ lvim.plugins = {
   },
 {"stevearc/dressing.nvim"},
   {"AckslD/swenv.nvim"},
+{
+    "m4xshen/hardtime.nvim",
+    dependencies = {"MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim"},
+    opts = {}
+  },
+  {
+    "andweeb/presence.nvim"
+  }
 }
 table.insert(lvim.plugins, {
   "zbirenbaum/copilot-cmp",
