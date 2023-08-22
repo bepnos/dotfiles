@@ -240,3 +240,8 @@ exec spotify
 workspace $ws3 output HDMI-0
 workspace $ws2 output HDMI-0
 exec google-chrome
+
+# Fullscreen screenshot
+bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/Screenshots/ && notify-send "Screenshot taken"'
+# Area screenshot
+bindsym --release $mod+Print exec --no-startup-id scrot -s -e 'mv $f ~/Pictures/Screenshots/ && notify-send "Screenshot taken"'
