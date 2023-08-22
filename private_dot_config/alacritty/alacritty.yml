@@ -7,4 +7,5 @@ font:
 window:
   opacity: 0.7
 
-
+import:
+ - ~/.config/alacritty/themes/themes/gruvbox_dark.yaml
