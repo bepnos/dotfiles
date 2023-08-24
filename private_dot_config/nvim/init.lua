@@ -28,7 +28,6 @@ vim.opt.rtp:prepend(lazypath)
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
-  "pocco81/auto-save.nvim",
   "andweeb/presence.nvim",
   "ggandor/leap.nvim",
   -- Detect tabstop and shiftwidth automatically
@@ -39,6 +38,11 @@ require('lazy').setup({
   "xiyaowong/transparent.nvim",
   "theprimeagen/harpoon",
   "mbbill/undotree",
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
+
   {
     "kdheepak/lazygit.nvim",
     -- optional for floating window border decoration
