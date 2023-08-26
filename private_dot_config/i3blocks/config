@@ -43,8 +43,8 @@ label=
 instance=Master
 #instance=PCM
 interval=1
-signal=10
-command=/usr/share/i3blocks/volume pulse
+signal=2
+command=/usr/share/i3blocks/volume_pulse
 
 # Memory usage
 #
@@ -56,7 +56,7 @@ command=/usr/share/i3blocks/volume pulse
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=
+label= 
 #instance=/mnt/data
 interval=30
 
@@ -71,7 +71,7 @@ interval=30
 #separator=false
 
 [load_average]
-label=
+label= 
 interval=10
 
 # Battery indicator
@@ -85,13 +85,13 @@ interval=30
 # Date Time
 #
 [date]
-label=
+label= 
 command=date '+%Y-%m-%d'
 interval=1
 
 # idk
 [time]
-label=
+label= 
 command=date '+%H:%M:%S'
 interval=1
 
