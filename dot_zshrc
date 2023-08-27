@@ -131,3 +131,4 @@ esac
 if [[ $(hostname) = "laptop-arch" ]]; then
   source /usr/share/doc/pkgfile/command-not-found.zsh
 fi
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
