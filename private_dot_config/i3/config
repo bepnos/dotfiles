@@ -249,3 +249,5 @@ exec mechvibes
 bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/Screenshots/ && notify-send "Screenshot taken"'
 # Area screenshot
 bindsym --release $mod+Print exec --no-startup-id scrot -s -e 'mv $f ~/Pictures/Screenshots/ && notify-send "Screenshot taken"'
+# I3 lock
+bindsym $mod+Shift+x exec --no-startup-id i3lock -i ~/Personal/Wallpapers/girlincel.png
