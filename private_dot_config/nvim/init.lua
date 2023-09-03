@@ -169,16 +169,13 @@ require('lazy').setup({
   },
   { "github/copilot.vim" },
   {
-    "zbirenbaum/copilot.lua",
-    config = function()
-      require("copilot").setup()
-    end
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    config = function()
-      require("copilot_cmp").setup()
-    end
+    'akinsho/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim', -- optional for vim.ui.select
+    },
+    config = true,
   }
 })
 -- [[ Highlight on yank ]]
