@@ -128,8 +128,13 @@ case ":$PATH:" in
 esac
 # pnpm end
 # arch stuff
-if [[ $(hostname) = "laptop-arch" ]]; then
-  source /usr/share/doc/pkgfile/command-not-found.zsh
-fi
+source /usr/share/doc/pkgfile/command-not-found.zsh
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
+export PATH="$PATH:$HOME/Android/Sdk/platform-tools"
+
+# To customize prompt, run `p10k configure` or edit ~.p10k.zsh.
+[[ ! -f ~.p10k.zsh ]] || source ~.p10k.zsh
+
+# To customize prompt, run `p10k configure` or edit ~.p10k.zsh.
+[[ ! -f ~.p10k.zsh ]] || source ~.p10k.zsh

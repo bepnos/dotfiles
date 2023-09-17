@@ -243,7 +243,7 @@ exec spotify
 exec google-chrome-stable
 exec discord
 exec obsidian
-exec mechvibes
+exec mechvibes --in-process-gpu
 
 # Fullscreen screenshot
 bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/Screenshots/ && notify-send "Screenshot taken"'
