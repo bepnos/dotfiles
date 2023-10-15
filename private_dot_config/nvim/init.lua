@@ -176,6 +176,20 @@ require('lazy').setup({
       'stevearc/dressing.nvim', -- optional for vim.ui.select
     },
     config = true,
+  },
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",         -- required
+      "nvim-telescope/telescope.nvim", -- optional
+      "sindrets/diffview.nvim",        -- optional
+      "ibhagwan/fzf-lua",              -- optional
+    },
+    config = true
+  },
+  {
+    'mhartington/formatter.nvim',
+    config = true
   }
 })
 -- [[ Highlight on yank ]]

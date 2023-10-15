@@ -6,6 +6,7 @@ lsp.ensure_installed({
   "pylsp",
   "ruff_lsp",
   "lua_ls",
+  "tsserver",
 })
 -- Fix Undefined global 'vim'
 lsp.nvim_workspace()
@@ -35,6 +36,7 @@ lsp.set_preferences({
     info = 'I'
   }
 })
+
 lsp.on_attach(function(client, bufnr)
   local opts = { buffer = bufnr, remap = false }
 
@@ -52,6 +54,13 @@ lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({ buffer = bufnr })
   lsp.buffer_autoformat()
 end)
+
+require('lspconfig').tsserver.setup({
+  on_attach = function(client, bufnr)
+    client.resolved_capabilities.document_formatting = true
+    client.resolved_capabilities.document_range_formatting = true
+  end
+})
 lsp.setup()
 -- start of cmp config after lsp-zero set its defaults
 cmp.setup({
