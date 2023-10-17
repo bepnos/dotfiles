@@ -21,38 +21,37 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 -- NOTE: Here is where you install your plugins.
 --  You can configure plugins using the `config` key.
 --
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
-require('lazy').setup({
+require('lazy').setup {
   -- NOTE: First, some plugins that don't require any configuration
-  "andweeb/presence.nvim",
-  "ggandor/leap.nvim",
+  'andweeb/presence.nvim',
+  'ggandor/leap.nvim',
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   -- transparency plugin
-  "xiyaowong/transparent.nvim",
-  "theprimeagen/harpoon",
-  "mbbill/undotree",
+  'xiyaowong/transparent.nvim',
+  'theprimeagen/harpoon',
+  'mbbill/undotree',
   {
-    "folke/trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    'folke/trouble.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
 
   {
-    "kdheepak/lazygit.nvim",
+    'kdheepak/lazygit.nvim',
     -- optional for floating window border decoration
     dependencies = {
-      "nvim-lua/plenary.nvim",
+      'nvim-lua/plenary.nvim',
     },
   },
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim', opts = {} },
   {
     -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -66,15 +65,15 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk,
-          { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
+        vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk, { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
         vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
         vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
       end,
     },
   },
   {
-    "luisiacc/gruvbox-baby", priority = 1000
+    'luisiacc/gruvbox-baby',
+    priority = 1000,
   },
 
   {
@@ -96,16 +95,12 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
-    opts = {
-      char = '┊',
-      show_trailing_blankline_indent = false,
-    },
+    main = 'ibl',
+    opts = {},
   },
 
-
-  -- "gc" to comment visual regions/lines
+  -- -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
-
 
   -- Fuzzy Finder (files, lsp, etc)
   {
@@ -142,32 +137,29 @@ require('lazy').setup({
     branch = 'v2.x',
     dependencies = {
       -- LSP Support
-      { 'neovim/nvim-lspconfig' },             -- Required
-      { 'williamboman/mason.nvim' },           -- Optional
+      { 'neovim/nvim-lspconfig' }, -- Required
+      { 'williamboman/mason.nvim' }, -- Optional
       { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp' },     -- Required
+      { 'hrsh7th/nvim-cmp' }, -- Required
       { 'hrsh7th/cmp-nvim-lsp' }, -- Required
-      { 'L3MON4D3/LuaSnip' },     -- Required
-    }
+      { 'L3MON4D3/LuaSnip' }, -- Required
+    },
   },
   {
-    "windwp/nvim-autopairs",
+    'windwp/nvim-autopairs',
     -- Optional dependency
     dependencies = { 'hrsh7th/nvim-cmp' },
     config = function()
-      require("nvim-autopairs").setup {}
+      require('nvim-autopairs').setup {}
       -- If you want to automatically add `` after selecting a function or method
-      local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-      local cmp = require('cmp')
-      cmp.event:on(
-        'confirm_done',
-        cmp_autopairs.on_confirm_done()
-      )
+      local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
+      local cmp = require 'cmp'
+      cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
     end,
   },
-  { "github/copilot.vim" },
+  { 'github/copilot.vim' },
   {
     'akinsho/flutter-tools.nvim',
     lazy = false,
@@ -178,20 +170,20 @@ require('lazy').setup({
     config = true,
   },
   {
-    "NeogitOrg/neogit",
+    'NeogitOrg/neogit',
     dependencies = {
-      "nvim-lua/plenary.nvim",         -- required
-      "nvim-telescope/telescope.nvim", -- optional
-      "sindrets/diffview.nvim",        -- optional
-      "ibhagwan/fzf-lua",              -- optional
+      'nvim-lua/plenary.nvim', -- required
+      'nvim-telescope/telescope.nvim', -- optional
+      'sindrets/diffview.nvim', -- optional
+      'ibhagwan/fzf-lua', -- optional
     },
-    config = true
+    config = true,
   },
   {
-    'mhartington/formatter.nvim',
-    config = true
-  }
-})
+    'stevearc/conform.nvim',
+    opts = {},
+  },
+}
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
@@ -233,7 +225,7 @@ end, { desc = '[/] Fuzzily search in current buffer' })
 vim.keymap.set('n', '<leader>fg', require('telescope.builtin').git_files, { desc = 'find git files' })
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { desc = 'find files' })
 vim.keymap.set('n', '<leader>fs', function()
-  require('telescope.builtin').grep_string({ search = vim.fn.input("Grep > ") })
+  require('telescope.builtin').grep_string { search = vim.fn.input 'Grep > ' }
 end)
 
 -- [[ Configure Treesitter ]]
@@ -245,7 +237,8 @@ require('nvim-treesitter.configs').setup {
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = true,
   highlight = {
-    enable = true, additional_vim_regex_highlighting = false,
+    enable = true,
+    additional_vim_regex_highlighting = false,
   },
 }
 
@@ -257,4 +250,4 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
-require("bepnos")
+require 'bepnos'

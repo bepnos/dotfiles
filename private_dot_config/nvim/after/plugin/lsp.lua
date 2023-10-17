@@ -52,7 +52,6 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
   -- auto formatter
   lsp.default_keymaps({ buffer = bufnr })
-  lsp.buffer_autoformat()
 end)
 
 require('lspconfig').tsserver.setup({

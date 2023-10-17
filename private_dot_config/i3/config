@@ -134,6 +134,7 @@ bindsym $mod+quotedbl workspace $ws3
 bindsym $mod+apostrophe workspace number $ws4
 bindsym $mod+parenleft workspace number $ws5
 bindsym $mod+minus workspace number $ws6
+bindsym $mod+section workspace number $ws6
 bindsym $mod+egrave workspace number $ws7
 bindsym $mod+underscore workspace number $ws8
 bindsym $mod+ccedilla workspace number $ws9
