@@ -73,9 +73,14 @@ require('lazy').setup {
   },
   {
     'luisiacc/gruvbox-baby',
-    priority = 1000,
   },
-
+  { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
+  {
+    'folke/tokyonight.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',

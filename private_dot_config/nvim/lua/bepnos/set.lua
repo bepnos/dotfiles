@@ -38,8 +38,8 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
 vim.o.termguicolors = true
-vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox-baby]])
+vim.o.background = 'dark' -- or "light" for light mode
+vim.cmd [[colorscheme gruvbox-baby]]
 
 -- [[ Basic Keymaps ]]
 
@@ -56,7 +56,7 @@ vim.opt.smartindent = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 vim.opt.undofile = true
 vim.opt.incsearch = true
 vim.opt.scrolloff = 12
