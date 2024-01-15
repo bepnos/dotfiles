@@ -4,7 +4,6 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
   "pylsp",
-  "ruff_lsp",
   "lua_ls",
   "tsserver",
 })
@@ -59,6 +58,16 @@ require('lspconfig').tsserver.setup({
     client.resolved_capabilities.document_formatting = true
     client.resolved_capabilities.document_range_formatting = true
   end
+})
+require('lspconfig').pylsp.setup({
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = { enabled = false },
+        pylint = { enabled = false }
+      }
+    }
+  }
 })
 lsp.setup()
 -- start of cmp config after lsp-zero set its defaults
