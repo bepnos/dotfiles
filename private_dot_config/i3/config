@@ -233,6 +233,7 @@ include ~/.config/i3/machine-config
 exec --no-startup-id picom & 
 exec --no-startup-id sleep 2 && nitrogen --restore
 exec --no-startup-id xinput set-prop 11 "libinput Accel Profile Enabled" 0 1
+exec --no-startup-id flameshot &
 
 
 # Media player controls
@@ -248,8 +249,6 @@ exec mechvibes --in-process-gpu
 exec slack
 
 # Fullscreen screenshot
-bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/Screenshots/ && notify-send "Screenshot taken"'
-# Area screenshot
-bindsym --release $mod+Print exec --no-startup-id scrot -s -e 'mv $f ~/Pictures/Screenshots/ && notify-send "Screenshot taken"'
+bindsym Print exec --no-startup-id flameshot gui
 # I3 lock
 bindsym $mod+Shift+x exec --no-startup-id i3lock -i ~/Personal/Wallpapers/girlincel.png
