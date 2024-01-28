@@ -114,6 +114,7 @@ export PATH="$HOME/.local/bin:$PATH"
 alias ls="exa --group-directories-first --icons -l"
 alias vim="nvim"
 alias sl="exa --group-directories-first --icons -l"
+alias cool="cool-retro-term --workdir . & disown && exit"
 export EDITOR="nvim"
 export PATH=$PATH:/snap/bin
 export PATH="$HOME/.config/diff-so-fancy:$PATH"
