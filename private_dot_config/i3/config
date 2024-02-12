@@ -154,6 +154,7 @@ bindsym $mod+Shift+10 move container to workspace number $ws10
 # Get id class using xprop
 assign [class="Spotify"] $ws3
 assign [class="vivaldi-stable"] $ws2
+assign [class="Vivaldi-stable"] $ws2
 assign [class="discord"] $ws5
 assign [class="obsidian"] $ws4 
 assign [class="Slack"] $ws6
@@ -241,7 +242,7 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-exec spotify 
+exec spotify-launcher
 exec vivaldi
 exec discord
 exec obsidian
