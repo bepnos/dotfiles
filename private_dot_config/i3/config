@@ -215,6 +215,7 @@ client.urgent           $red $red $white $red $red
 bar {
         status_command i3blocks
         position top
+        tray_output none
         colors {
         # bar background color
         background $bg
@@ -236,7 +237,7 @@ exec --no-startup-id picom &
 exec --no-startup-id sleep 2 && nitrogen --restore
 exec --no-startup-id xinput set-prop 11 "libinput Accel Profile Enabled" 0 1
 exec --no-startup-id flameshot &
-exec --no-startup-id xinput set-prop "SYNA32A5:00 06CB:CE17 Touchpad" "libinput Tapping Enabled" 1
+exec xinput set-prop "SYNA32A5:00 06CB:CE17 Touchpad" "libinput Tapping Enabled" 1
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -253,3 +254,7 @@ exec slack
 bindsym Print exec --no-startup-id flameshot gui
 # I3 lock
 bindsym $mod+Shift+x exec --no-startup-id i3lock -i ~/Personal/Wallpapers/girlincel.png
+
+# All my homies hate title bars
+default_border pixel 0 
+default_floating_border pixel 0

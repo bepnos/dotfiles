@@ -27,7 +27,8 @@
 command=/usr/share/i3blocks/$BLOCK_NAME
 separator_block_width=15
 markup=none
-
+DEFAULT_COLOR="#d79921"
+LONG_FORMAT="${SYMB}${VOL}%"
 # Volume indicator
 #
 # The first parameter sets the step (and units to display)
@@ -38,8 +39,6 @@ command=~/.local/bin/spotify-status
 interval=1
 
 [volume]
-label=
-#label=♪
 instance=Master
 #instance=PCM
 interval=1
@@ -70,9 +69,9 @@ interval=30
 # see the script for deta
 #separator=false
 
-[load_average]
-label= 
-interval=10
+#[load_average]
+#label= 
+#interval=10
 
 # Battery indicator
 #
@@ -134,3 +133,14 @@ interval=1
 #instance=NUM
 #interval=once
 #signal=11
+#
+[aur-update]
+command=~/.local/share/i3blocks/aur-update
+markup=pango
+format=json
+interval=43200
+UPDATE_COLOR=yellow
+QUIET=1
+IGNORE=root vidyodesktop
+#CACHE_UPDATES=0
+#FORCE_IPV4=1
