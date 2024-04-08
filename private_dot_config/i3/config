@@ -153,8 +153,7 @@ bindsym $mod+Shift+10 move container to workspace number $ws10
 
 # Get id class using xprop (spotify acts up for some reason)
 for_window [class="Spotify"] move to workspace $ws3
-assign [class="vivaldi-stable"] $ws2
-assign [class="Vivaldi-stable"] $ws2
+assign [class="google-chrome"] $ws2
 # still not working
 for_window [class="armcord"] move to workspace $ws5
 assign [class="obsidian"] $ws4 
@@ -215,7 +214,6 @@ client.urgent           $red $red $white $red $red
 bar {
         status_command i3blocks
         position top
-        tray_output none
         colors {
         # bar background color
         background $bg
@@ -245,7 +243,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 exec spotify-launcher
-exec vivaldi
+exec google-chrome-stable 
 exec armcord 
 exec obsidian
 exec --no-startup-id mechvibes --in-process-gpu &
